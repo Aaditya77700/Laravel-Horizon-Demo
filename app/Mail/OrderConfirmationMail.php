@@ -6,6 +6,7 @@ use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class OrderConfirmationMail extends Mailable
 {
@@ -15,11 +16,13 @@ class OrderConfirmationMail extends Mailable
 
     public function build()
     {
-        $mail = $this->subject("Order #{$this->order->id} Confirmation")
-                     ->markdown('emails.order.confirmation', ['order' => $this->order]);
+        $invoicePath = "invoices/order_{$this->order->id}.pdf";
 
-        
-
-        return $mail;
+        return $this->subject("Order #{$this->order->id} Confirmation")
+                    ->markdown('emails.order.confirmation', ['order' => $this->order])
+                    ->attach(Storage::path($invoicePath), [
+                        'as' => "invoice_{$this->order->id}.pdf",
+                        'mime' => 'application/pdf',
+                    ]);
     }
 }

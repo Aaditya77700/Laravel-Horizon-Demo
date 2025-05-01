@@ -7,7 +7,9 @@ use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\File;
 
 class GenerateInvoiceJob implements ShouldQueue
 {
@@ -17,19 +19,34 @@ class GenerateInvoiceJob implements ShouldQueue
 
     public function handle(): void
     {
-        $content = "Invoice for Order #{$this->order->id}\n";
-        foreach ($this->order->items as $item) {
-            $content .= "- {$item->product->name} x {$item->quantity} = $" . ($item->price * $item->quantity) . "\n";
+        try {
+            Log::info("Generating PDF for Order #{$this->order->id}");
+
+            // Generate PDF
+            $pdf = Pdf::loadView('pdf.invoice', ['order' => $this->order]);
+
+            // Define public path for saving
+            $directory = public_path('invoices');
+            $fileName = "order_{$this->order->id}.pdf";
+            $filePath = $directory . '/' . $fileName;
+
+            // Ensure folder exists
+            if (!File::exists($directory)) {
+                File::makeDirectory($directory, 0755, true);
+            }
+
+            // Save PDF file
+            file_put_contents($filePath, $pdf->output());
+
+            // Save invoice info to DB (optional)
+            Invoice::create([
+                'order_id' => $this->order->id,
+                'file_path' => "invoices/{$fileName}",
+            ]);
+
+            Log::info("Invoice PDF saved to: {$filePath}");
+        } catch (\Throwable $e) {
+            Log::error("Failed to generate invoice PDF: " . $e->getMessage());
         }
-        $content .= "Total: {$this->order->total_amount}";
-
-        // $filePath = "invoices/order_{$this->order->id}.txt";
-        // Storage::put($filePath, $content);
-
-        // Invoice::create([
-        //     'order_id' => $this->order->id,
-        //     'file_path' => $filePath,
-        // ]);
     }
 }
-
