@@ -38,25 +38,23 @@ After an order is placed, these tasks are automatically handled in the backgroun
 
 ![Horizon Screenshot](public/images/horizon_2.png)
 
----
+### 📌
+
+![invoice Screenshot](public/images/invoice.png)
+
 
 ### 📌 
 
 ![Horizon Screenshot](public/images/horizon_3.png)
 
----
 
 ### 📌 
 
 ![Horizon Screenshot](public/images/horizon_4.png)
 
----
-
 ### 📌 
 
 ![Order Screenshot](public/images/order.png)
-
----
 
 ### 📌 
 
@@ -74,9 +72,6 @@ After an order is placed, these tasks are automatically handled in the backgroun
 
 ![mail Screenshot](public/images/mail.png)
 
-### 📌
-
-![invoice Screenshot](public/images/invoice.png)
 
 ---
 
