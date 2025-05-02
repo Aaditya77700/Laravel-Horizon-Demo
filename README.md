@@ -121,11 +121,29 @@ php artisan serve
 
 
 
+## 📊 Monitoring with Horizon
 
-### 📊 Horizon Dashboard
-```bash
-[php artisan serve](http://localhost:8000/horizon)
-```
+#### Access the Horizon dashboard by navigating to /horizon in your application URL: http://localhost:8000/horizon
+### Use the Horizon dashboard to:
+- Monitor the status of queues (pending, processing, completed jobs).
+- View job throughput and processing times.
+- Inspect details of recently completed or failed jobs.
+- Manually retry failed jobs.
+- Manage and monitor queue workers.
+
+
+## 🔭 Debugging with Telescope
+
+#### Access the Telescope dashboard by navigating to /telescope: http://localhost:8000/telescope
+### Telescope provides deeper insights into your application's execution, which is invaluable during development and debugging:
+- Requests: See incoming HTTP requests and their details.
+- Jobs: View detailed information about dispatched and processed queue jobs, including payloads and any exceptions. This complements Horizon by showing more detail about individual job executions.
+- Exceptions: Log and inspect any errors that occur anywhere in the application, including within jobs.
+- Logs: View application log entries.
+- Queries: Inspect database queries executed during requests or jobs (e.g., see the exact SQL used for inventory deduction).
+- Mail: See details of emails sent by the application, including recipients and content previews (great for debugging the SendConfirmationEmail job).
+- Models: Track Eloquent model events (create, update, delete).
+
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any changes or improvements.
