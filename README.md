@@ -27,6 +27,60 @@ After an order is placed, these tasks are automatically handled in the backgroun
 - **Database:** MySQL (or compatible DB) 🗄️
 - **Frontend:** Tailwind CSS for UI styling 🌈
 
+
+## 🖼️ Screenshots
+
+### 📌 
+
+![Horizon Screenshot](public/images/horizon_1.png)
+
+### 📌 
+
+![Horizon Screenshot](public/images/horizon_2.png)
+
+---
+
+### 📌 
+
+![Horizon Screenshot](public/images/horizon_3.png)
+
+---
+
+### 📌 
+
+![Horizon Screenshot](public/images/horizon_4.png)
+
+---
+
+### 📌 
+
+![Order Screenshot](public/images/order.png)
+
+---
+
+### 📌 
+
+![dashboard Screenshot](public/images/dashboard.png)
+
+### 📌
+
+![telescope Screenshot](public/images/telescope_1.png)
+
+### 📌
+
+![telescope Screenshot](public/images/telescope_2.png)
+
+### 📌
+
+![mail Screenshot](public/images/mail.png)
+
+### 📌
+
+![invoice Screenshot](public/images/invoice.png)
+
+---
+
+
 ## 📥 Installation
 
 Follow these steps to set up the project locally:
