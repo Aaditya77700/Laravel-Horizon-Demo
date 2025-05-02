@@ -81,8 +81,14 @@ php artisan horizon
 
 ### 📧 Set Up Mail Configuration
 ```bash
-php artisan horizon:install
-php artisan horizon
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=--------
+MAIL_PASSWORD=********
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=no-reply@quickcart.test
+MAIL_FROM_NAME="QuickCart"
 ```
 
 ### 🖨️ Generate the Invoices
