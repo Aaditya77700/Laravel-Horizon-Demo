@@ -16,13 +16,14 @@ class OrderConfirmationMail extends Mailable
 
     public function build()
     {
-        $invoicePath = "invoices/order_{$this->order->id}.pdf";
+        $invoicePath = public_path("invoices/order_{$this->order->id}.pdf");
 
         return $this->subject("Order #{$this->order->id} Confirmation")
                     ->markdown('emails.order.confirmation', ['order' => $this->order])
-                    ->attach(Storage::path($invoicePath), [
+                    ->attach($invoicePath, [
                         'as' => "invoice_{$this->order->id}.pdf",
                         'mime' => 'application/pdf',
                     ]);
-    }
+        
+            }
 }
