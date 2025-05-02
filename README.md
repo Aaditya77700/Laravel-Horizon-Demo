@@ -150,6 +150,116 @@ composer require barryvdh/laravel-dompdf
 php artisan serve
 ```
 
+## 📂 Folder Structure Highlights
+
+```plaintext
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       ├── Controller.php
+│   │       └── OrderController.php
+│   ├── Jobs/
+│   │   ├── DeductInventoryJob.php
+│   │   ├── GenerateInvoiceJob.php
+│   │   └── SendOrderConfirmationJob.php
+│   ├── Mail/
+│   │   └── OrderConfirmationMail.php
+│   ├── Models/
+│   │   ├── Invoice.php
+│   │   ├── Order.php
+│   │   ├── OrderItem.php
+│   │   ├── Product.php
+│   │   └── User.php
+│   └── Providers/
+│       ├── AppServiceProvider.php
+│       ├── HorizonServiceProvider.php
+│       ├── HorizonWindowsServiceProvider.php  # Or standard Auth/Event/Route SPs
+│       └── TelescopeServiceProvider.php
+├── bootstrap/
+│   └── [...] # Standard bootstrap files/cache
+├── config/
+│   ├── app.php
+│   ├── auth.php
+│   ├── cache.php
+│   ├── database.php
+│   ├── dompdf.php
+│   ├── filesystems.php
+│   ├── horizon.php
+│   ├── logging.php
+│   ├── mail.php
+│   ├── queue.php
+│   ├── services.php
+│   ├── session.php
+│   └── telescope.php
+│   └── [...] # Other standard config files
+├── database/
+│   ├── factories/
+│   │   └── UserFactory.php
+│   ├── migrations/
+│   │   └── [...] # Migration files
+│   └── seeders/
+│       ├── DatabaseSeeder.php
+│       └── ProductSeeder.php
+├── public/
+│   ├── images/
+│   │   └── [...] # Image assets
+│   ├── invoices/
+│   │   ├── order_20.pdf
+│   │   ├── order_21.pdf
+│   │   ├── order_22.pdf
+│   │   ├── order_23.pdf
+│   │   └── order_24.pdf
+│   ├── vendor/
+│   │   └── [...] # Published vendor assets (like Horizon UI)
+│   ├── .htaccess
+│   ├── favicon.ico
+│   ├── index.php
+│   └── robots.txt
+├── resources/
+│   ├── css/
+│   │   └── [...] # CSS files (e.g., app.css)
+│   ├── js/
+│   │   └── [...] # JavaScript files (e.g., app.js)
+│   └── views/
+│       ├── dashboard/
+│       │   └── index.blade.php
+│       ├── emails/
+│       │   └── order/
+│       │       └── confirmation.blade.php
+│       ├── invoices/
+│       │   └── pdf/            # Note: Structure shown in image
+│       │       └── invoice.blade.php
+│       ├── layouts/
+│       │   └── app.blade.php
+│       ├── order/
+│       │   └── create.blade.php
+│       └── welcome.blade.php
+├── routes/
+│   ├── console.php
+│   └── web.php
+├── storage/
+│   └── [...] # Standard storage folders (app, framework, logs)
+├── tests/
+│   └── [...] # Standard test folders (Feature, Unit)
+├── vendor/
+│   └── [...] # Composer dependencies
+├── .editorconfig
+├── .env
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── artisan
+├── composer.json
+├── composer.lock
+├── database.sqlite  # As shown in image (often in database/)
+├── package.json
+├── phpunit.xml
+├── README.md
+└── vite.config.js
+```
+
+
+
 ## 📝 Usage
 
 ### 🚶‍♂️ Order Processing Flow
