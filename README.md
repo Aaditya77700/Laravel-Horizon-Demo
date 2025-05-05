@@ -304,8 +304,34 @@ php artisan serve
 - Models: Track Eloquent model events (create, update, delete).
 
 
-## 🤝 Contributing
-Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any changes or improvements.
+## 🤝 **Contributing**
 
-## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+We welcome contributions! Follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature/fix.
+3. Commit changes and open a **Pull Request**.
+
+---
+
+## 📜 **License**
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 **Author**
+
+**Kombee Technologies**
+
+- 🌐 [Portfolio](https://github.com/kombee-technologies)
+- 💼 [LinkedIn](https://in.linkedin.com/company/kombee-global)
+- 🌍 [Website](https://www.kombee.com/)
+
+---
+
+<p align="center">
+  Built with ❤️ using Laravel
+</p>
+
+---
